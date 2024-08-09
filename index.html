@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Test22</title>
+<style>
+a{color:cyan;font-size:18px;}
+a:hover{color:blue;}
+
+div p span{color:yellow;}
+
+.box1 a:nth-child(3) {
+background: red;
+}
+
+.box2:hover > .box3 > .box4 > input[type=text] { background: #44ff44; }
+
+.box4:has(.active) .box5 input { background: #770077; }
+
+div:has(p:has(span)) {
+	background: orange;
+}
+div:has(p span) {
+	background: orange;
+}
+body:has(video, audio) {
+  /* styles to apply if the content contains audio OR video */
+}
+body:has(video):has(audio) {
+  /* styles to apply if the content contains both audio AND video */
+}
+
+
+</style>
+</head>
+<body style="background-color:black;color:white;">
+
+<div>Bookmarks</div>
+
+<hr />
+<div class="box1">
+<a href="http://localhost:8080/" target="_blank">http://localhost:8080/</a><br />
+<a href="http://localhost:8081/" target="_blank">http://localhost:8081/</a><hr />
+
+</div>
+<hr />
+
+<div class="box2">bbbb <input type="text" />
+	<div class="box3">cccc <input type="text" />
+		<div class="box4">dddd <input type="text" />
+			<div class="box5 active">eeee <input type="text" />
+			</div>
+		</div>
+	</div>
+</div>
+<hr />
+
+HTML TEST:
+<hr />Mobile: bold italic underline
+<br /><strong>strong bold</strong> -- <b>b bold</b>
+<br /><em>em italic</em> -- <i>i italic</i>
+<br /><ins>ins underline</ins> -- <u>u underline</u>
+<marquee>ABCDEFGH</marquee>
+<marquee width="60%" direction="up" height="50px" scrolldelay="500">
+This is a sample scrolling text that has scrolls in the upper direction.
+</marquee>
+<h1>Test Heading</h1>
+<p>Test paragraph.</p><hr />
+
+<div><p><span>color yellow</span></p></div>
+<hr />
+<h4 style="border:2px solid red;">SEPARATED</h4>
+<p style="border:2px solid red;">SEPARATED</p>
+<div style="border:2px solid red;">SEPARATED</div>
+<blockquote style="border:2px solid red;">SEPARATED</blockquote>
+<div style="border:2px solid red;">SEPARATED</div>
+<span style="border:2px solid red;">not-SEPARATED</span>
+<span style="border:2px solid red;">not-SEPARATED</span>
+
+<hr />
+<p>Definition list:</p>
+<dl>
+  <dt>Coffee</dt>
+  <dd>Black hot drink</dd>
+  <dt>Milk</dt>
+  <dd>White cold drink</dd>
+</dl>
+
+<hr />
+<p>Ordered list:</p>
+<ol start="11" type="a">
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ol>
+
+<hr />
+<p>Unordered list:</p>
+<ul>
+  <li>Coffee</li>
+  <li>Tea
+    <ul>
+      <li>Black tea</li>
+      <li>Green tea
+        <ul>
+          <li>China</li>
+          <li>Africa</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Milk</li>
+</ul>
+
+<hr />
+
+<h2>Image Maps</h2>
+<p>Click on the computer, the phone, or the cup of coffee to go to a new page...</p>
+
+<img src="img_map_test.jpg" alt="" usemap="#workmap" width="400" height="379">
+
+<map name="workmap">
+  <area shape="rect" coords="34,44,270,350" alt="Computer" href="computer.htm">
+  <area shape="rect" coords="290,172,333,250" alt="Phone" href="phone.htm">
+  <area shape="circle" coords="337,300,44" alt="Cup of coffee" href="coffee.htm">
+</map>
+
+
+<hr />
+<svg width="100" height="100">
+  <circle cx="50" cy="50" r="40"
+  stroke="green" stroke-width="4" fill="yellow" />
+Sorry, your browser does not support inline SVG.
+</svg>
+<svg width="300" height="200">
+  <polygon points="100,10 40,198 190,78 10,78 160,198"
+  style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;" />
+Sorry, your browser does not support inline SVG.
+</svg>
+<svg height="130" width="500">
+  <defs>
+    <linearGradient id="grad1">
+      <stop offset="0%" stop-color="yellow" />
+      <stop offset="100%" stop-color="red" />
+    </linearGradient>
+  </defs>
+  <ellipse cx="100" cy="70" rx="85" ry="55" fill="url(#grad1)" />
+  <text fill="#ffffff" font-size="45" font-family="Verdana" x="50" y="86">SVG</text>
+  Sorry, your browser does not support inline SVG.
+</svg>
+
+<hr />
+<canvas id="myCanvas" width="200" height="100" style="border:1px solid #ff0000;">
+Your browser does not support the HTML canvas tag.</canvas>
+
+<script>
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+
+// Create gradient
+var grd = ctx.createLinearGradient(0,0,200,0);
+grd.addColorStop(0,"red");
+grd.addColorStop(1,"white");
+// Fill with gradient
+ctx.fillStyle = grd;
+ctx.fillRect(10,10,160,80);
+
+ctx.font = "30px Arial";
+ctx.fillStyle = "green";
+ctx.fillText("Hello World",10,50);
+
+</script>
+
+<script>
+//JavaScript Callbacks
+function myDisplayer(str) {
+	alert(str);
+}
+function myFirst(str1, fun2) {
+  fun2('Hi '+str1);
+}
+function mySecond(str2) {
+  myDisplayer(str2);
+}
+//myFirst('Shan', mySecond);
+
+</script>
+
+<script>
+//Asynchronous JavaScript
+//Waiting for a Timeout
+//setTimeout(myFunction, 1000);
+function myFunction() {
+	alert("I love You !!");
+}
+
+var iCnt=0;
+var tCtrl;
+//tCtrl=setInterval(myFunction22, 1000);
+function myFunction22() {
+  alert(iCnt++);
+  if(iCnt>2) clearInterval(tCtrl);
+}
+</script>
+
+<script>
+//JavaScript Promise Object
+/*
+A Promise contains both the producing-code and calls to the consuming-code
+"Producing code" is code that can take some time
+"Consuming code" is code that must wait for the result
+*/
+
+let myPromise = new Promise(function(myResolve, myReject) {
+  let req = new XMLHttpRequest();
+  req.open('GET', "mytext.txt");
+  req.onload = function() {
+    if (req.status == 200) {
+      myResolve(req.response);
+    } else {
+      myReject("File not Found");
+    }
+  };
+  req.send();
+});
+
+/*
+myPromise.then(
+  function(value) {myDisplayer(value);},
+  function(error) {myDisplayer(error);}
+);
+*/
+
+</script>
+<script>
+//JavaScript Async
+/*
+"async and await make promises easier to write"
+async -> return a Promise
+await -> wait for a Promise
+
+Ex:
+async function myFunc33() {
+  return "Hello";
+}
+-->Is the same as-->
+function myFunc33() {
+  return Promise.resolve("Hello");
+}
+
+*/
+async function myFunc33() {return "Hello";}
+myFunc33().then(
+  function(value) {myDisplayer(value);},
+  function(error) {myDisplayer(error);}
+);
+//Hence async=new Promise
+
+//Promise.resolve
+function myFunc44() {
+  return Promise.resolve("Hello44")
+}
+myFunc44().then(
+	function(value) {myDisplayer(value);}
+);
+
+//Promise.reject
+function resolved5(result) {
+  //console.log('Resolved5');
+  alert('Resolved5');
+}
+function rejected5(result) {
+  //console.error(result);
+  alert(result);
+}
+Promise.reject(new Error('fail-5')).then(resolved5, rejected5);
+
+//Async & Await
+/*
+Await Syntax -> inside an async function ONLY
+The await keyword can only be used inside an async function.
+The await keyword makes the function pause the execution and wait for a resolved promise before it continues:
+*/
+//Ex-1:
+async function myFunc7() {
+  let myPromise7 = new Promise(function(resolve, reject) {
+    resolve("I love You 7777 !!");
+  });
+  alert(await myPromise7);
+}
+//myFunc7();
+//Ex-2:
+async function getTxtFile() {
+  let myPromise8 = new Promise(function(resolve) {
+    let req = new XMLHttpRequest();
+    req.open('GET', "mytext.txt");
+    req.onload = function() {
+      if (req.status == 200) {
+        resolve(req.response);
+      } else {
+        resolve("File not Found 88");
+      }
+    };
+    req.send();
+  });
+  alert(await myPromise8);
+}
+//getTxtFile();
+</script>
+
+
+<hr />
+</body>
+</html> 
